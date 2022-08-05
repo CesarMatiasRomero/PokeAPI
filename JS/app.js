@@ -3,6 +3,8 @@ const inputFiltrado = document.querySelector("#filtrar");
 const buscar = document.querySelector("#buscar");
 const next = document.querySelector("#next");
 const previous = document.querySelector("#previous");
+const d = document
+
 
 let offset = 1;
 let limit = 8;
@@ -59,11 +61,11 @@ function removeChildNodes(parent) {
 
 
 function filtrarPokemons () {
-  inputFiltrado.addEventListener("keyup", (e) =>{
+  d.addEventListener("keyup", (e) =>{
     if(e.target.matches("#filtrar")){
       console.log(e.target.value);
 
-      inputFiltrado.querySelectorAll(".pokemon-container").forEach(el =>{
+      d.querySelectorAll(".pokemon-container").forEach(el =>{
         el.textContent.toLowerCase().includes(e.target.value)
         ?mostrarPokemons()
         :removeChildNodes()
@@ -91,4 +93,4 @@ next.addEventListener("click", () => {
 });
 
 fetchPokemons(offset, limit);
-filtrarPokemons("#filtrar", ".pokemon-container")
+filtrarPokemons(inputFiltrado, container)
