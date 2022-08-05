@@ -60,20 +60,29 @@ function removeChildNodes(parent) {
 }
 
 
-function filtrarPokemons () {
-  d.addEventListener("keyup", (e) =>{
-    if(e.target.matches("#filtrar")){
-      console.log(e.target.value);
+// function filtrarPokemons () {
+//   d.addEventListener("keyup", (e) =>{
+//     if(e.target.matches("#filtrar")){
+//       console.log(e.target.value);
 
-      d.querySelectorAll(".pokemon-container").forEach(el =>{
-        el.textContent.toLowerCase().includes(e.target.value)
-        ?mostrarPokemons()
-        :removeChildNodes()
-      })
-    }
+//       d.querySelectorAll(".pokemon-container").forEach(el =>{
+//         el.textContent.toLowerCase().includes(e.target.value)
+//         ?mostrarPokemons()
+//         :removeChildNodes()
+//       })
+//     }
+//   })
+// }
+
+function filtrarPokemon(params) {
+  
+  inputFiltrado.addEventListener("keyup", e => {
+    console.log(inputFiltrado.value);
+    const newPokemon = pokemon.filter(pokemon => pokemon.name.includes(inputFiltrado.value))
+    mostrarPokemons(newPokemon)
+  
   })
 }
-
 
 
 
@@ -93,4 +102,5 @@ next.addEventListener("click", () => {
 });
 
 fetchPokemons(offset, limit);
-filtrarPokemons(inputFiltrado, container)
+// filtrarPokemons(inputFiltrado, container)
+filtrarPokemon()
