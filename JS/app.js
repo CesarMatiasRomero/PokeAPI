@@ -19,7 +19,8 @@ function fetchPokemon(id) {
     .then((data) => {
       mostrarPokemons(data);
     });
-}
+
+} 
 
 function fetchPokemons(offset, limit) {
   for (let i = offset; i <= offset + limit; i++) {
@@ -74,15 +75,16 @@ function removeChildNodes(parent) {
 //   })
 // }
 
-function filtrarPokemon(params) {
+// function filtrarPokemon() {
   
-  inputFiltrado.addEventListener("keyup", e => {
-    console.log(inputFiltrado.value);
-    const newPokemon = pokemon.filter(pokemon => pokemon.name.includes(inputFiltrado.value))
-    mostrarPokemons(newPokemon)
+//   inputFiltrado.addEventListener("keyup", e => {
+//     console.log(inputFiltrado.value);
+//     const newPokemon = pokemon.filter(pokemon => pokemon.name.includes(inputFiltrado.value))
+//     mostrarPokemons(newPokemon)
   
-  })
-}
+//   })
+// }
+
 
 
 
@@ -103,4 +105,4 @@ next.addEventListener("click", () => {
 
 fetchPokemons(offset, limit);
 // filtrarPokemons(inputFiltrado, container)
-filtrarPokemon()
+// filtrarPokemon()

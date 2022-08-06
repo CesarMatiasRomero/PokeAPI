@@ -10,6 +10,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-family: "Oswald", sans-serif;
   }
+
+  nav{
+    background: linear-gradient(
+      90deg,
+      rgba(85, 144, 189, 1) 0%,
+      rgba(108, 183, 240, 1) 54%,
+      rgba(182, 216, 242, 1) 82%
+    );
+    font-weight: bold;
+  }
+
+  .pokeball{
+    height: 2rem;
+  }
+
+  .title{
+    text-align:center ;
+    margin: 0 0 5rem 0;
+    background-color: #fff;
+    height: 10rem;
+  }
+
+  img{
+    margin: 1rem;
+  }
   
   h1 {
     color: white;
@@ -17,6 +42,63 @@ body {
     
 
   }
+
+  .busqueda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  #filtrar{
+      
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      font-size: 1.2rem;
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      border-radius: 0.2rem;
+      background-color: rgb(255, 255, 255);
+      border: none;
+      width: 15rem;
+      height: 3rem;
+      border-bottom: 0.3rem solid transparent;
+      transition: all 0.3s;
+    
+  }
+
+  #buscar {
+    min-width: 130px;
+    height: 40px;
+    color: #000;
+    padding: 5px 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(
+      90deg,
+      rgba(85, 144, 189, 1) 0%,
+      rgba(108, 183, 240, 1) 54%,
+      rgba(182, 216, 242, 1) 82%
+    );
+    box-shadow: 0 5px rgb(99, 98, 98);
+  }
+  #buscar:hover {
+    box-shadow: 0 3px #666;
+    top: 1px;
+  }
+  #buscar:active {
+    box-shadow: 0 0 #666;
+    top: 5px;
+  }
+ 
   
   .pokemon-container {
     display: grid;
@@ -61,6 +143,8 @@ body {
   } */
   
   .pagination {
+    display: flex;
+    justify-content: space-evenly;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -97,4 +181,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     text-align: left;
+  }
+
+  .filtro{
+    display: none;
   }
