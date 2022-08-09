@@ -61,19 +61,19 @@ function removeChildNodes(parent) {
 }
 
 
-// function filtrarPokemons () {
-//   d.addEventListener("keyup", (e) =>{
-//     if(e.target.matches("#filtrar")){
-//       console.log(e.target.value);
+function filtrarPokemons () {
+  d.addEventListener("keyup", (e) =>{
+    if(e.target.matches("#filtrar")){
+      console.log(e.target.value);
 
-//       d.querySelectorAll(".pokemon-container").forEach(el =>{
-//         el.textContent.toLowerCase().includes(e.target.value)
-//         ?mostrarPokemons()
-//         :removeChildNodes()
-//       })
-//     }
-//   })
-// }
+      d.querySelectorAll(".pokemon-container").forEach(el =>{
+         el.textContent.toLowerCase().includes(e.target.value)
+        ?mostrarPokemons(pokemon)
+        :removeChildNodes()
+      })
+    }
+  })
+}
 
 // function filtrarPokemon() {
   
@@ -85,6 +85,50 @@ function removeChildNodes(parent) {
 //   })
 // }
 
+
+
+// function filtrar(e) {
+//     e.preventDefault()
+//     let data = inputFiltrado.value.toLowerCase()
+    
+
+//     pokemon.map(pokemon => {
+//         if (data == pokemon.name) {
+//             console.log("mostrando pokemon");
+            
+//             setTimeout(() => {
+//               const card = document.createElement("div");
+//               card.classList.add("card-pokemon");
+            
+//               const imgContainer = document.createElement("div");
+//               imgContainer.classList.add("img-container");
+            
+//               const img = document.createElement("img");
+//               img.src = pokemon.sprites.front_default;
+            
+//               imgContainer.appendChild(img);
+            
+//               const number = document.createElement("p");
+//               number.textContent = `#${pokemon.id}`;
+            
+//               const name = document.createElement("p");
+//               name.classList.add("name");
+//               name.textContent = pokemon.name;
+            
+//               card.appendChild(imgContainer);
+//               card.appendChild(number);
+//               card.appendChild(name);
+            
+//               pokemon - container.appendChild(card);
+
+//             }, 3000);
+
+            
+//         }
+
+        
+//     })
+//   }
 
 
 
@@ -104,5 +148,7 @@ next.addEventListener("click", () => {
 });
 
 fetchPokemons(offset, limit);
-// filtrarPokemons(inputFiltrado, container)
+filtrarPokemons(inputFiltrado, container)
 // filtrarPokemon()
+
+buscar.addEventListener("click", filtrar)
